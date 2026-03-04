@@ -10,3 +10,21 @@ console.log(url); // Exibe o valor do atributo "href" no console
 document.getElementById("caixa").style.backgroundColor = "pink"; // Altera a cor de fundo do elemento com id "caixa" para rosa
 
 document.getElementById("alerta").classList.add("destaque"); // Adiciona a classe "destaque" ao elemento com id "alerta"
+
+document.getElementById("alert").classList.remove("oculto");
+
+let novoParagrafo = document.createElement("p");
+novoParagrafo.textContent = "Este elemento foi criado pelo JavaScript.";
+document.getElementById("container").appendChild(novoParagrafo)
+
+let NovoItem = document.createElement("li");
+NovoItem.textContent = "Item novo";
+document.getElementById("list").appendChild(NovoItem)
+
+let item = document.getElementById("item1");
+document.getElementById("lista").removeChild(item);
+
+
+
+
+
