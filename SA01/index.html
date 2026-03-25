@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+<div class="login-container">
+        <div class="card">
+
+            <div class="topo">
+                <i class="bi bi-person-circle"></i>
+                <h2>Bem-vindo</h2>
+                <p>Faça seu login</p>
+            </div>
+
+
+            <div class="input-group">
+                <input type="text" id="nome" placeholder="Nome Completo">
+                <p id="pnome"></p>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="email" placeholder="E-mail">
+                <p id="pmail"></p>
+            </div>
+
+            <div class="input-group">
+                <div class="password-wrapper">
+                    <input type="password" id="senha" placeholder="Senha">
+                    <i class="bi bi-eye-slash-fill icone" id="botaosenha"></i>
+                </div>
+                <p id="psenha"></p>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="telefone" placeholder="Telefone">
+            </div>
+
+
+        
+
+        <button id="validar">Cadastrar</button>
+
+        <p id="mensagem"></p>
+
+        </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
