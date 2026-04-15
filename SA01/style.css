@@ -193,3 +193,10 @@ button:hover {
     margin-top: 10px;
     font-size: 14px;
 }
+
+.erro {
+    border: 2px solid red;
+}
+.carregando {
+    opacity: 0.6;
+}
