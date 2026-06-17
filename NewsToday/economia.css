@@ -1,0 +1,202 @@
+.titulo-pagina{
+    font-size:48px;
+    margin-bottom:40px;
+    border-bottom:3px solid #ff6b00;
+    padding-bottom:15px;
+}
+
+.conteudo-categoria{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.noticia-item{
+    display:flex;
+    gap:30px;
+    margin-bottom:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.noticia-item img{
+    width:380px;
+    height:240px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.noticia-info{
+    flex:1;
+}
+
+.categoria{
+    color:#ff6b00;
+    font-weight:700;
+    font-size:13px;
+}
+
+.noticia-info h2{
+    font-size:34px;
+    margin:12px 0;
+    line-height:1.2;
+}
+
+.noticia-info p{
+    color:#555;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.data{
+    display:block;
+    margin-top:15px;
+    color:#888;
+    font-size:14px;
+}
+
+.noticia-item:hover h2{
+    color:#ff6b00;
+}
+
+@media(max-width:900px){
+    .noticia-item{
+        flex-direction:column;
+    }
+
+    .noticia-item img{
+        width:100%;
+        height:250px;
+    }
+
+    .noticia-info h2{
+        font-size:28px;
+    }
+}
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width: 1024px){
+
+    .conteudo-categoria{
+        padding:40px 20px;
+    }
+
+    .titulo-pagina{
+        font-size:42px;
+    }
+
+    .noticia-item{
+        gap:20px;
+    }
+
+    .noticia-item img{
+        width:320px;
+        height:210px;
+    }
+
+    .noticia-info h2{
+        font-size:28px;
+    }
+
+}
+
+/* ===========================
+   TABLETS PEQUENOS
+=========================== */
+
+@media (max-width: 768px){
+
+    .titulo-pagina{
+        font-size:36px;
+        text-align:center;
+    }
+
+    .noticia-item{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .noticia-item img{
+        width:100%;
+        height:260px;
+    }
+
+    .noticia-info h2{
+        font-size:26px;
+    }
+
+    .noticia-info p{
+        font-size:16px;
+    }
+
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width: 576px){
+
+    .conteudo-categoria{
+        padding:30px 15px;
+    }
+
+    .titulo-pagina{
+        font-size:30px;
+    }
+
+    .noticia-item{
+        margin-bottom:30px;
+        padding-bottom:30px;
+    }
+
+    .noticia-item img{
+        height:220px;
+        border-radius:6px;
+    }
+
+    .categoria{
+        font-size:11px;
+    }
+
+    .noticia-info h2{
+        font-size:22px;
+        line-height:1.3;
+    }
+
+    .noticia-info p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .data{
+        font-size:13px;
+    }
+
+}
+
+/* ===========================
+   CELULARES PEQUENOS
+=========================== */
+
+@media (max-width: 400px){
+
+    .titulo-pagina{
+        font-size:26px;
+    }
+
+    .noticia-item img{
+        height:180px;
+    }
+
+    .noticia-info h2{
+        font-size:20px;
+    }
+
+    .noticia-info p{
+        font-size:14px;
+    }
+
+}

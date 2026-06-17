@@ -1,0 +1,120 @@
+# Situação de Aprendizagem 02
+
+## Projeto: NewsToday
+
+### Melhorias realizadas
+
+Durante o desenvolvimento do projeto foram realizadas diversas melhorias visando modernizar a interface, melhorar a experiência do usuário e adequar o site aos padrões atuais de desenvolvimento web.
+
+As principais melhorias implementadas foram:
+
+* Reformulação completa do layout visual do portal;
+* Criação de páginas específicas para as categorias:
+
+  * Tecnologia;
+  * Esportes;
+  * Economia;
+  * Contato;
+* Melhoria da navegação entre páginas através da barra de navegação;
+* Padronização das cores e tipografia do site;
+* Inclusão de imagens ilustrativas para todas as notícias;
+* Organização das notícias em formato de portal jornalístico;
+* Criação de página de contato com formulário para comunicação dos usuários;
+* Implementação de efeitos de transição (hover) em links e notícias;
+* Estruturação do conteúdo utilizando containers responsivos;
+* Melhoria do rodapé com informações institucionais.
+
+---
+
+## Elementos semânticos utilizados
+
+Para melhorar a acessibilidade, organização e interpretação do conteúdo pelos navegadores e mecanismos de busca, foram utilizados diversos elementos semânticos do HTML5:
+
+### Estrutura principal
+
+```html
+<header>
+<nav>
+<main>
+<section>
+<article>
+<footer>
+```
+
+### Descrição dos elementos
+
+* `<header>`: utilizado para o cabeçalho das páginas;
+* `<nav>`: utilizado para o menu de navegação;
+* `<main>`: utilizado para o conteúdo principal;
+* `<section>`: utilizado para agrupar conteúdos relacionados;
+* `<article>`: utilizado para representar notícias individuais;
+* `<footer>`: utilizado para informações do rodapé.
+
+Esses elementos tornam o código mais organizado, acessível e semântico.
+
+---
+
+## Media Queries implementadas
+
+Foram implementadas Media Queries para garantir que o site funcione corretamente em diferentes tamanhos de tela.
+
+### Tablets (até 1024px)
+
+* Redução de espaçamentos;
+* Ajuste do tamanho dos títulos;
+* Reorganização dos blocos de conteúdo.
+
+### Tablets e celulares grandes (até 768px)
+
+* Notícias passam a ser exibidas em coluna;
+* Menu adaptado para telas menores;
+* Redução das larguras fixas;
+* Ajuste das imagens para ocupar 100% da largura.
+
+### Smartphones (até 576px)
+
+* Redução do tamanho das fontes;
+* Ajuste dos espaçamentos internos;
+* Otimização da leitura das notícias;
+* Melhor adaptação do formulário de contato.
+
+### Smartphones pequenos (até 400px)
+
+* Ajustes adicionais para melhorar a visualização;
+* Redução do tamanho dos títulos;
+* Melhor aproveitamento do espaço disponível.
+
+---
+
+## Decisões de UX e UI adotadas
+
+### UX (User Experience)
+
+As seguintes decisões foram tomadas para melhorar a experiência do usuário:
+
+* Navegação simples e intuitiva;
+* Menu visível em todas as páginas;
+* Organização das notícias por categoria;
+* Conteúdo disposto de forma clara e fácil de ler;
+* Formulário de contato objetivo;
+* Layout responsivo para dispositivos móveis.
+
+### UI (User Interface)
+
+As decisões de interface incluíram:
+
+* Visual limpo e moderno;
+* Uso de cores neutras para facilitar a leitura;
+* Destaque visual para categorias de notícias;
+* Espaçamento adequado entre elementos;
+* Hierarquia visual utilizando diferentes tamanhos de títulos;
+* Efeitos de hover para melhorar a interação;
+* Imagens destacadas para aumentar o engajamento do usuário.
+
+---
+
+## Conclusão
+
+O projeto NewsToday foi modernizado utilizando boas práticas de HTML5 e CSS3, com foco em responsividade, usabilidade e organização semântica. As melhorias implementadas tornaram o portal mais agradável visualmente, mais acessível e adequado para diferentes dispositivos.
+
+Esse texto já está pronto para ser salvo como **README.md** ou **explicacao.txt** e atende todos os itens solicitados na atividade.
