@@ -45,6 +45,11 @@ const botaoCadastrar = document.querySelector('#botaoCadastrar');
 
 botaoCadastrar.addEventListener('click', function() { 
 
+    if (nome.value === "" || preco.value === "" || categoria.value === "" || desconto.value === "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
     const produto = new Produto(
         nome.value, parseFloat(preco.value), categoria.value, parseFloat(desconto.value)
     ); 
@@ -52,6 +57,11 @@ botaoCadastrar.addEventListener('click', function() {
     loja.adicionarProduto(produto); 
     produto.aplicarDesconto(); 
     produto.exibirNaTela(); 
+    
+nome.value = "";
+preco.value = "";
+categoria.value = "";
+desconto.value = "";
 
 });
 
