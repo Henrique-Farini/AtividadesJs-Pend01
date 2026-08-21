@@ -11,6 +11,8 @@ class Produto {
         this.precoComDesconto = precoComDesconto;
     } 
 
+    
+
     exibirNaTela() { 
         const resultado = document.querySelector('#resultado'); 
 
@@ -24,6 +26,7 @@ class Produto {
         `; 
     } 
 } 
+
 
 const nome = document.querySelector('#nome'); 
 const preco = document.querySelector('#preco'); 
@@ -45,6 +48,7 @@ botaoCadastrar.addEventListener('click', function() {
     ); 
 
     produto.aplicarDesconto(); 
+    localStorage.setItem("produto", JSON.stringify(produto));
     produto.exibirNaTela(); 
 
 nome.value = "";
@@ -52,3 +56,16 @@ preco.value = "";
 categoria.value = "";
 desconto.value = "";
 });
+
+const dados = localStorage.getItem("produto");
+if (dados) {
+    const produtoSalvo = JSON.parse(dados);
+    const produto = new Produto(
+        produtoSalvo.nome,
+        produtoSalvo.preco,
+        produtoSalvo.categoria,
+        produtoSalvo.desconto
+    );
+    produto.precoComDesconto = produtoSalvo.precoComDesconto;
+    produto.exibirNaTela();
+}

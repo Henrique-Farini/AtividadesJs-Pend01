@@ -15,18 +15,33 @@ class Produto {
 class Loja { 
     constructor() { 
         this.produtos = []; 
+         this.carregarLocalStorage(); 
     } 
 
     adicionarProduto(produto) { 
         this.produtos.push(produto); 
+         this.localStorageSalvar()
         this.exibirTodos();  
     } 
 
     
     excluirUm(index) {
         this.produtos.splice(index, 1); 
+        this.localStorageSalvar(); 
         this.exibirTodos(); 
     }
+
+    localStorageSalvar() {
+        localStorage.setItem("produtos", JSON.stringify(this.produtos));
+    }
+
+     carregarLocalStorage() {
+    const dadosSalvos = localStorage.getItem("produtos");
+    if (dadosSalvos) {
+      this.produtos = JSON.parse(dadosSalvos);
+      this.exibirTodos(); 
+    }
+  }
 
     excluirTodos() { 
         this.produtos = []; 
@@ -35,6 +50,7 @@ class Loja {
 
     exibirTodos() {
         const resultado = document.querySelector('#resultado'); 
+         if (!resultado) return;
         resultado.innerHTML = ""; 
 
         this.produtos.forEach((produto, index) => {
@@ -74,7 +90,9 @@ botaoCadastrar.addEventListener('click', function() {
     ); 
 
     produto.aplicarDesconto(); 
+    
     loja.adicionarProduto(produto); 
+    loja.localStorageSalvar();
 
     nome.value = ""; 
     preco.value = ""; 
