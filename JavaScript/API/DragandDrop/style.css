@@ -1,0 +1,104 @@
+:root {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #172033;
+	background: #eef3f8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: min(100% - 32px, 720px);
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 56px 0;
+	background: #eef3f8;
+}
+
+h1 {
+	margin: 0 0 36px;
+	color: #102a43;
+	font-size: clamp(2rem, 5vw, 3.25rem);
+	line-height: 1.05;
+}
+
+h4 {
+	margin: 0 0 12px;
+	color: #52606d;
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+#produtos,
+#carrinho {
+	border-radius: 14px;
+	box-shadow: 0 12px 30px rgba(16, 42, 67, 0.1);
+}
+
+#produtos {
+	width: fit-content;
+	min-width: 190px;
+	padding: 18px 22px;
+	border: 2px solid #2f80ed;
+	color: #0b4f9c;
+	background: #ffffff;
+	cursor: grab;
+	font-size: 1.05rem;
+	font-weight: 700;
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+#produtos:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 34px rgba(16, 42, 67, 0.16);
+}
+
+#produtos:active {
+	cursor: grabbing;
+	transform: scale(0.98);
+}
+
+hr {
+	margin: 34px 0;
+	border: 0;
+	border-top: 1px solid #cbd5e1;
+}
+
+#carrinho {
+	min-height: 190px;
+	padding: 24px;
+	border: 2px dashed #8aa4bf;
+	background: #dfeaf4;
+	transition: border-color 180ms ease, background 180ms ease;
+}
+
+#carrinho h4 {
+	color: #334e68;
+}
+
+#carrinho:hover {
+	border-color: #2f80ed;
+	background: #d6e6f5;
+}
+
+#carrinho #produtos {
+	margin-top: 24px;
+}
+
+@media (max-width: 480px) {
+	body {
+		width: min(100% - 24px, 720px);
+		padding: 36px 0;
+	}
+
+	#produtos {
+		width: 100%;
+		text-align: center;
+	}
+
+	#carrinho {
+		padding: 20px 16px;
+	}
+}
