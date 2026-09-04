@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Mirror</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("vaca.avif");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden; 
+        }
+        #camera {
+            width: 640px;
+            height: 480px;
+            border: 10px solid #000;
+            transform: scaleX(-1); 
+            object-fit: cover;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: absolute; top: 0; left: 0; width: 100%; background-color: rgba(0, 0, 0, 0.5); color: white; text-align: center; padding: 10px;">
+        <h1 style="margin: 0;">Webcam Site</h1>
+    </nav>
+    <video id="camera" autoplay playsinline></video>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização atual</title>
+    <style>
+        :root {
+            --background: #f3f6f8;
+            --surface: #ffffff;
+            --border: #dce5e8;
+            --text: #17252d;
+            --muted: #687980;
+            --accent: #147d78;
+            --accent-soft: #e5f3f1;
+            --danger: #b54747;
+            --danger-soft: #fff1f1;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            overflow: hidden;
+            color: var(--text);
+            background: radial-gradient(circle at top right, #e2f0ee, transparent 36%), var(--background);
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        main {
+            position: relative;
+            width: min(100%, 560px);
+            max-height: calc(100vh - 48px);
+            padding: clamp(24px, 6vw, 44px);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 18px 45px rgba(28, 52, 60, 0.09);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            letter-spacing: 0;
+        }
+
+        #mensagem {
+            margin: 10px 0 28px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        #mensagem:not(.erro)::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        #mensagem.erro {
+            padding: 12px 14px;
+            color: var(--danger);
+            background: var(--danger-soft);
+            border-radius: 10px;
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 0;
+        }
+
+        dl div {
+            min-width: 0;
+            padding: 16px 14px;
+            background: #f8fafb;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        dt {
+            margin-bottom: 8px;
+            color: var(--muted);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        dd {
+            margin: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        #erro-imagem {
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            max-width: 72px;
+            max-height: 72px;
+            margin: 0;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        main.localizacao-negada {
+            width: auto;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+
+        main.localizacao-negada h1,
+        main.localizacao-negada #mensagem,
+        main.localizacao-negada dl {
+            display: none;
+        }
+
+        main.localizacao-negada #erro-imagem {
+            position: static;
+            display: block;
+            width: min(72vw, 360px);
+            max-width: 100%;
+            max-height: 70vh;
+            margin: 0;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 16px;
+            }
+
+            main {
+                max-height: calc(100vh - 32px);
+            }
+
+            dl {
+                grid-template-columns: 1fr;
+            }
+
+            dl div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+            }
+
+            dt {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Localização atual</h1>
+        <p id="mensagem">Obtendo sua localização...</p>
+        <dl>
+            <div>
+                <dt>Latitude</dt>
+                <dd id="latitude">--</dd>
+            </div>
+            <div>
+                <dt>Longitude</dt>
+                <dd id="longitude">--</dd>
+            </div>
+            <div>
+                <dt>Precisão</dt>
+                <dd id="precisao">--</dd>
+            </div>
+        </dl>
+        <img id="erro-imagem" src="imagem.png" alt="Não foi possível obter a localização" hidden>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

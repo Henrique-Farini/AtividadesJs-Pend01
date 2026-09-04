@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Monitoramento</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="ph ph-video-camera"></i>
+            </div>
+            <div>
+                <p class="brand-kicker">Central operacional</p>
+                <h1 class="brand-title">Monitoramento em tempo real</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-layout">
+        <section class="location-card" aria-labelledby="location-title">
+            <div class="card-heading">
+                <div class="card-icon">
+                    <i class="ph ph-map-pin-line"></i>
+                </div>
+                <div>
+                    <p class="card-eyebrow">Telemetria</p>
+                    <h2 id="location-title">Localização atual</h2>
+                </div>
+            </div>
+            <div class="location-readings" aria-live="polite">
+                <div class="reading reading-latitude">
+                    <i class="ph ph-compass"></i>
+                    <p id="latitude">Latitude: Carregando...</p>
+                </div>
+                <div class="reading reading-longitude">
+                    <i class="ph ph-crosshair"></i>
+                    <p id="longitude">Longitude: Carregando...</p>
+                </div>
+                <div class="reading reading-accuracy">
+                    <i class="ph ph-scan"></i>
+                    <p id="precisao">Precisão: Carregando...</p>
+                </div>
+            </div>
+        </section>
+        <section class="video-container" aria-label="Visualização da câmera">
+            <div class="video-frame">
+                <video id="camera" autoplay muted playsinline></video>
+                
+                <div class="video-badge">
+                    <span class="rec-dot"></span> Ao vivo
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
