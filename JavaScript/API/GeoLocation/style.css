@@ -202,7 +202,9 @@ body {
 }
 
 .video-container,
-.video-frame {
+.camera-panels,
+.video-frame,
+.camera-panel {
     min-height: 0;
 }
 
@@ -210,15 +212,36 @@ body {
     display: flex;
 }
 
-.video-frame {
-    position: relative;
+.camera-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+}
+
+.camera-panel {
+    position: relative;
+    height: 100%;
     background: var(--navy);
     border: 4px solid var(--surface);
     border-radius: 8px;
     box-shadow: var(--shadow);
+    padding: 14px;
+}
+
+.camera-panel h2 {
+    margin: 0 0 10px;
+    color: var(--surface);
+    font-size: 0.85rem;
+}
+
+.media-frame {
+    position: relative;
+    height: calc(100% - 72px);
+    overflow: hidden;
+    background: #07171d;
+    border-radius: 5px;
 }
 
 #camera {
@@ -226,6 +249,35 @@ body {
     height: 100%;
     object-fit: cover;
     transform: scaleX(-1);
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#painel-foto[hidden] {
+    display: none;
+}
+
+#botao {
+    position: absolute;
+    right: 14px;
+    bottom: 10px;
+    z-index: 1;
+    padding: 8px 12px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#botao:hover {
+    background: var(--teal-soft);
 }
 
 .video-badge {
@@ -291,6 +343,11 @@ body {
 
     .reading p {
         font-size: 0.67rem;
+    }
+
+    .camera-panels {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
     }
 }
 

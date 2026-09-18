@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore o mapa e encontre criaturas da PokeAPI.">
+	<title>BLACKSHABAW | Caça no mapa</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="app-shell">
+		<section class="intro-panel">
+			<div class="brand-row">
+				<span class="brand-mark">BS</span>
+				<span class="brand-name">BLACKSHABAW</span>
+			</div>
+
+			<div class="intro-copy">
+				<p class="eyebrow">EXPEDIÇÃO URBANA</p>
+				<h1>Encontre o que vive <em>por perto.</em></h1>
+				<p class="intro-text">Abra o mapa, explore sua região e capture criaturas selvagens geradas pela PokeAPI.</p>
+			</div>
+
+			<div class="stats-row" aria-label="Resumo da expedição">
+				<div class="stat"><strong id="found-count">0</strong><span>capturados</span></div>
+				<div class="stat"><strong id="distance-count">0 m</strong><span>distância</span></div>
+				<div class="stat"><strong id="streak-count">01</strong><span>sequência</span></div>
+			</div>
+
+			<div class="hunt-card">
+				<div class="card-heading">
+					<div>
+						<p class="eyebrow">NOVA BUSCA</p>
+						<h2>Varra o horizonte</h2>
+					</div>
+					<span class="radar-icon" aria-hidden="true">⌁</span>
+				</div>
+				<p class="card-text">Encontre um Pokémon e abra a tela de captura para lançar sua Pokébola.</p>
+				<button id="hunt-button" class="hunt-button" type="button">
+					<span class="button-icon">✦</span>
+					<span id="button-label">Explorar área</span>
+				</button>
+				<p id="status-message" class="status-message" role="status">Pronto para a próxima descoberta.</p>
+			</div>
+
+			<div class="inventory">
+				<div class="inventory-heading">
+					<div>
+						<p class="eyebrow">COLEÇÃO</p>
+						<h2>Meu inventário</h2>
+					</div>
+					<span id="inventory-total" class="inventory-total">0/06</span>
+				</div>
+				<div id="inventory-grid" class="inventory-grid">
+					<p id="empty-inventory" class="empty-inventory">As capturas aparecerão aqui.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="map-panel" aria-label="Mapa da expedição">
+			<div id="map"></div>
+			<div id="capture-screen" class="capture-screen" hidden>
+				<div class="capture-header">
+					<div>
+						<p class="eyebrow">MODO CAPTURA</p>
+						<h2>Capture o Pokémon</h2>
+					</div>
+					<button id="back-map-button" class="back-map-button" type="button">← Voltar ao mapa</button>
+				</div>
+				<div class="capture-stage">
+					<div class="capture-rings" aria-hidden="true"></div>
+					<img id="capture-pokemon" class="capture-pokemon" src="" alt="">
+					<div class="capture-details">
+						<strong id="capture-name">-</strong>
+						<span id="capture-type">-</span>
+					</div>
+				</div>
+				<div id="catch-dock" class="catch-dock" hidden>
+					<div class="catch-instruction"><strong>Pokébola pronta</strong><span>Arraste até o Pokémon</span></div>
+					<button id="pokeball" class="pokeball" type="button" aria-label="Arraste a Pokébola para capturar" draggable="false">
+						<span class="pokeball-center"></span>
+					</button>
+				</div>
+			</div>
+			<div class="map-overlay top-overlay">
+
+			</div>
+			<div class="map-overlay bottom-overlay">
+				<button id="locate-button" class="locate-button" type="button" aria-label="Centralizar na minha localização">⌖</button>
+			</div>
+		</section>
+	</main>
+
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="script.js"></script>
+</body>
+</html>

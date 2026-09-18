@@ -1,0 +1,83 @@
+/* Configuração do fundo e alinhamento do conteúdo principal */
+body { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 30px; /* Cria um espaço elegante entre a câmera e a foto tirada */
+    height: 100vh; 
+    margin: 0; 
+    background-image: url("vaca.avif"); 
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden; 
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Estilo da Câmera (mantendo suas configurações e aplicando sombra) */
+#camera { 
+    width: 640px; 
+    height: 480px; 
+    border: 10px solid #000; 
+    transform: scaleX(-1); /* Efeito espelho na webcam */
+    object-fit: cover; 
+    border-radius: 50px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background-color: #000;
+}
+
+/* O Canvas precisa existir para o JS funcionar, mas deve sumir da tela */
+#canvas {
+    display: none;
+}
+
+/* Estilo da Foto Tirada (escondida até receber a imagem do JS) */
+#foto {
+    width: 640px;
+    height: 480px;
+    border: 10px solid #fff; /* Borda branca para diferenciar do feed ao vivo */
+    object-fit: cover;
+    border-radius: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Se a foto ainda não foi tirada (sem atributo src), ela fica invisível e não quebra o layout */
+#foto:not([src]), #foto[src=""] {
+    display: none;
+}
+
+/* Botão "Tirar Foto" totalmente modernizado */
+#botao {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o botão perfeitamente na horizontal */
+    
+    /* Design moderno */
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Degradê elegante */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(110, 142, 251, 0.3);
+    
+    /* Transição suave para animações */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no botão */
+#botao:hover {
+    background: linear-gradient(135deg, #5b7be9, #9662d1);
+    box-shadow: 0 15px 25px rgba(110, 142, 251, 0.5);
+    transform: translateX(-50%) translateY(-3px) scale(1.03); /* Mantém centralizado e sobe levemente */
+}
+
+/* Efeito ao clicar no botão */
+#botao:active {
+    transform: translateX(-50%) translateY(1px) scale(0.98); /* Efeito de clique físico */
+    box-shadow: 0 5px 10px rgba(110, 142, 251, 0.3);
+}

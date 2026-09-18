@@ -48,11 +48,22 @@
             </div>
         </section>
         <section class="video-container" aria-label="Visualização da câmera">
-            <div class="video-frame">
-                <video id="camera" autoplay muted playsinline></video>
-                
-                <div class="video-badge">
-                    <span class="rec-dot"></span> Ao vivo
+            <div class="camera-panels">
+                <div class="video-frame camera-panel">
+                    <h2>Ao vivo</h2>
+                    <div class="media-frame">
+                        <video id="camera" autoplay muted playsinline></video>
+                        <div class="video-badge">
+                            <span class="rec-dot"></span> Ao vivo
+                        </div>
+                    </div>
+                    <button id="botao" type="button">Tirar foto</button>
+                </div>
+                <div class="photo-frame camera-panel" id="painel-foto" hidden>
+                    <h2>Foto capturada</h2>
+                    <div class="media-frame">
+                        <canvas id="canvas" aria-label="Foto capturada"></canvas>
+                    </div>
                 </div>
             </div>
         </section>
