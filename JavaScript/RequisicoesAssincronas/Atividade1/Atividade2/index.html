@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Poke's NFT: mercado de Pokémon raros.">
+	<title>Poke's NFT | Mercado de Pokémon</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="#inicio" aria-label="Poke's NFT início">
+			<span class="brand-mark">P</span>
+			<span>Poke's NFT</span>
+		</a>
+		<nav class="main-nav" aria-label="Navegação principal">
+			<a class="active" href="#inicio">Início</a>
+			<a href="#marketplace">Mercado</a>
+			<a href="gallery.html">Galeria</a>
+			<a href="sobre.html">Sobre</a>
+		</nav>
+	</header>
+
+	<main id="inicio">
+		<section class="hero-section">
+			<div class="hero-copy">
+				<p class="eyebrow">O FUTURO DOS TREINADORES</p>
+				<h1>Compre e colecione <em>Pokémon raros.</em></h1>
+				<p class="hero-text">Descubra Pokémon especiais de todas as regiões. Escolha seu próximo parceiro e construa uma coleção inesquecível.</p>
+				<a class="primary-button" href="#marketplace">Explorar Pokémon <span>↗</span></a>
+			</div>
+			<div class="hero-art" aria-label="Pikachu em destaque">
+				<div class="sun-disc"></div>
+				<div class="hero-tag"><span>DESTAQUE DA SEMANA</span><strong>#025</strong></div>
+				<img id="hero-pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
+				<div class="hero-caption"><span>Por Estúdio Poke's</span><strong>Pikachu</strong><b id="hero-price">Consultando preço <small>Comprar agora <i>↗</i></small></b></div>
+			</div>
+		</section>
+
+		<section class="numbers" aria-label="Números do marketplace">
+			<div><strong>251+</strong><span>Pokémon disponíveis</span></div>
+			<div><strong>9K+</strong><span>Treinadores</span></div>
+			<div><strong>24K+</strong><span>Pokémon vendidos</span></div>
+		</section>
+
+		<section class="marketplace-section" id="marketplace">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">COLEÇÃO ORIGINAL</p>
+					<h2>Pokémon em destaque</h2>
+				</div>
+				<p id="results-label" class="results-label">Descubra os Pokémon mais especiais de todas as regiões.</p>
+			</div>
+			<div class="toolbar">
+				<label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Buscar Pokémon..." autocomplete="off"></label>
+				<button id="filter-open" class="filter-open" type="button" aria-controls="filter-panel" aria-expanded="false"><span>☷</span> Filtrar</button>
+			</div>
+			<div id="pokemon-grid" class="pokemon-grid" aria-live="polite"></div>
+			<p id="loading-message" class="loading-message">Consultando a PokéAPI<span>...</span></p>
+			<button id="load-more" class="load-more" type="button">Veja todos os Pokémon</button>
+		</section>
+
+		<aside id="filter-panel" class="filter-panel" aria-label="Filtros do marketplace" hidden>
+			<div class="filter-panel-header">
+				<div><p class="eyebrow">PERSONALIZE SUA BUSCA</p><h2>Filtrar Pokémon</h2></div>
+				<button id="filter-close" class="filter-close" type="button" aria-label="Fechar filtros">×</button>
+			</div>
+			<label class="filter-field" for="sort-filter"><span>Ordenar resultados</span><select id="sort-filter"><option value="default">Mais relevantes</option><option value="price-asc">Mais baratos primeiro</option><option value="price-desc">Mais caros primeiro</option></select></label>
+			<label class="range-field price-range" for="price-filter"><span>Preço máximo <output id="price-value">US$ 500</output></span><input id="price-filter" type="range" min="1" max="500" value="500"></label>
+			<label class="filter-field" for="type-filter"><span>Tipo do Pokémon</span><select id="type-filter"><option value="all">Todos os tipos</option><option value="normal">Normal</option><option value="fire">Fogo</option><option value="water">Água</option><option value="grass">Planta</option><option value="electric">Elétrico</option><option value="psychic">Psíquico</option><option value="dragon">Dragão</option><option value="ghost">Fantasma</option></select></label>
+			<div class="stats-filter">
+				<div class="stats-filter-heading"><span>Atributos mínimos</span><small>Escolha a força da equipe</small></div>
+				<label class="range-field" for="hp-filter"><span>Vida <output id="hp-value">0</output></span><input id="hp-filter" type="range" min="0" max="255" value="0"></label>
+				<label class="range-field" for="attack-filter"><span>Ataque <output id="attack-value">0</output></span><input id="attack-filter" type="range" min="0" max="200" value="0"></label>
+				<label class="range-field" for="defense-filter"><span>Defesa <output id="defense-value">0</output></span><input id="defense-filter" type="range" min="0" max="200" value="0"></label>
+				<label class="range-field" for="speed-filter"><span>Velocidade <output id="speed-value">0</output></span><input id="speed-filter" type="range" min="0" max="160" value="0"></label>
+			</div>
+			<div class="filter-panel-actions"><button id="filter-clear" class="filter-clear" type="button">Limpar filtros</button><button id="filter-apply" class="filter-apply" type="button">Aplicar filtros <span>↗</span></button></div>
+		</aside>
+		<div id="filter-backdrop" class="filter-backdrop" hidden></div>
+
+	</main>
+
+	<footer class="site-footer"><span>© 2026 Poke's NFT. Todos os direitos reservados.</span><span>Instagram &nbsp; Twitter &nbsp; Discord</span></footer>
+
+	<dialog id="pokemon-dialog" class="pokemon-dialog">
+		<button id="close-dialog" class="close-dialog" type="button" aria-label="Fechar detalhes">×</button>
+		<div id="dialog-content"></div>
+	</dialog>
+	<div id="toast" class="toast" role="status"></div>
+	<script src="script.js"></script>
+</body>
+</html>
