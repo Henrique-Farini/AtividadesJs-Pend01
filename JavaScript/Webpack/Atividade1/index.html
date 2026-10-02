@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack AI Chat</title>
+    <style>
+        body { font-family: sans-serif; background: #000000; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .chat { width: 350px; background: #ffffff; color: #000000; border-radius: 4px; overflow: hidden; }
+        h3 { margin: 0; padding: 12px; background: #f0f0f0; border-bottom: 1px solid #ccc; text-align: center; }
+        .box { height: 250px; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+        .msg { padding: 6px 10px; border-radius: 4px; max-width: 80%; font-size: 14px; }
+        .user { background: #e0f0ff; align-self: flex-end; }
+        .ai { background: #f0f0f0; align-self: flex-start; }
+        .input-area { display: flex; padding: 10px; border-top: 1px solid #ccc; gap: 5px; background: #ffffff; }
+        input { flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 6px 12px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <h3>Webpack AI</h3>
+        <div class="box" id="caixa-chat">
+            <div class="msg ai">Olá! Sou uma IA local. Digite algo como "olá", "ajuda" ou "piada"!</div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="entrada-usuario" placeholder="Pergunte algo..." autocomplete="off">
+            <button id="btn-enviar">Enviar</button>
+        </div>
+    </div>
+    <script src="dist/main.js"></script>
+</body>
+</html>
